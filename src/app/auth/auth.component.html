@@ -1,0 +1,41 @@
+<div class="container">
+<h1 class="page-main-title">¡TE DAMOS LA BIENVENIDA AL CLUB DE ENTRENADORES POKÉMON!</h1>
+<div class="auth-container">
+    <div class="form-wrapper">
+        <h2>{{isLoginMode ? 'Iniciar Sesion': 'Registrarse'}}</h2>
+        <h2>{{isLoginMode}}</h2>
+        <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+          <input  *ngIf='!isLoginMode' type="text" id="name" name="name" placeholder="Nombre Completo"
+          ngModel
+          required
+          >
+          <input type="email" id="email" name="email" placeholder="Email"
+           ngModel
+           required
+           email
+          >
+          <input type="password" id="password" name="password" placeholder="Your password.."
+          ngModel
+          required
+          minlength="8"
+          >
+          <input *ngIf='!isLoginMode' type="password" id="password" name="password" placeholder="Confirmar Passworrd">
+          <div class="button-container">
+            <button class="button button-green" type='submit' [disabled]="!authForm.valid">{{isLoginMode ? 'Iniciar Sesion': 'Registrarse'}}</button>
+            <button class="button button-green" type='button' (click)="onSwitchMode()">{{isLoginMode ? 'Registrarse': 'Cancelar'}}</button>
+          </div>
+        </form>
+    </div>
+    <!-- <div>
+      <h2>¡Únete al Club de Entrenadores Pokémon!</h2>
+      <form>
+        <input type="text" id="name" name="name" placeholder="Your Name..">
+        <input type="email" id="email" name="email" placeholder="Your email..">
+        <input type="password" id="password" name="password" placeholder="Your password..">
+        <input type="password" id="confirmPass" name="confirmPass" placeholder="Confirm password..">
+        <button>Registratse</button>
+        <button>Cancelar</button>
+      </form>
+    </div> -->
+</div>
+</div>
