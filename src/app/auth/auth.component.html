@@ -5,7 +5,7 @@
         <h2>{{isLoginMode ? 'Iniciar Sesion': 'Registrarse'}}</h2>
         <h2>{{isLoginMode}}</h2>
         <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
-          <input  *ngIf='!isLoginMode' type="text" id="name" name="name" placeholder="Nombre Completo"
+          <input  *ngIf='!isLoginMode' type="text" id="displayName" name="displayName" placeholder="Nombre Completo"
           ngModel
           required
           >
