@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PokedeskService } from './pokedesk.service'
-import { ThrowStmt } from '@angular/compiler';
-import { mergeMap } from 'rxjs/operators';
 import { Observable, forkJoin } from 'rxjs';
 import { Subscription } from 'rxjs';
 import 'rxjs/add/operator/debounceTime';
@@ -14,30 +12,22 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ['./pokedex.component.scss']
 })
 export class PokedexComponent implements OnInit {
-  subscription: Subscription;
-  pokemonArray$: [];
-  promiseResponseArray: Array<any> = [];
-  obsevableResponseArray: Array<any> = [];
+  pokemonArray: Array<any>
+  query: string;
+ 
   constructor(private pokeService: PokedeskService, private http: HttpClient) { }
 
-  async ngOnInit(): Promise<void> {
-      
-     this.http.get<any>("https://pokeapi.co/api/v2/pokemon")
-    .subscribe(async data => {
-      await  data.results.forEach( async element => {
-        this.http
-        .get<any>(`https://pokeapi.co/api/v2/pokemon/${element.name}`)
-        .toPromise()
-        .then(async data => {
-            this.promiseResponseArray.push(data);
-         });
-        
-      });
-    });
-   
-
-    console.log(this.promiseResponseArray)
-    console.log(this.obsevableResponseArray)
+   ngOnInit() {
+     const pokemonList = `https://pokeapi.co/api/v2/pokemon`
+     const singlePokemon = name =>`https://pokeapi.co/api/v2/pokemon/${name}`
+     Observable.ajax(pokemonList).map(e => e.response.results)
+     .switchMap(names => Observable.forkJoin(names.map(name => {
+       const url = singlePokemon(name.name)
+       return Observable.ajax(url).map(e => e.response)
+     })))
+     .subscribe(result => console.log(
+       this.pokemonArray = result
+     ))
 
 
   }

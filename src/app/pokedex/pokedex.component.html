@@ -1,5 +1,23 @@
-<div *ngFor='pokemonArray' class="wrapper">
-    <div>
-        <img src={pokemonArray.sprites.front_default}>
+
+<div class="wrap">
+    <div class="search">
+       <input [(ngModel)]="query" type="text" class="searchTerm" placeholder="What are you looking for?">
+       <button type="submit" class="searchButton">
+         <i class="fa fa-search"></i>
+      </button>
     </div>
-</div>
+ </div>
+
+<main class="grid">
+    <article *ngFor="let pokemon of pokemonArray |  search:query">
+     <p>{{pokemon.name}} </p>
+     <img src={{pokemon.sprites.front_default}}/>
+     <ul>
+         <li *ngFor="let types of pokemon.types">
+            <span [ngClass]='types.type.name' >{{ types.type.name}}</span> 
+         </li>
+     </ul>
+    </article>
+  
+  </main>
+  

@@ -8,6 +8,7 @@ import { PokedexComponent } from './pokedex/pokedex.component';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { HeaderComponent } from './header/header.component';
     AuthComponent,
     PokedexComponent,
     HeaderComponent,
+    SearchPipe,
   ],
   imports: [
     HttpClientModule,

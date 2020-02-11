@@ -1,25 +1,130 @@
 * {box-sizing: border-box;}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
-.wrapper {
-    border: 2px solid #fff;
-    background-color:  #fff;
-    border-radius: 5px;
-    margin: 100px;
-    overflow: auto;
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+  padding: 50px 50px 0px 50px;
 }
 
-.wrapper > div {
+.searchTerm {
+  width: 100%;
+  border: 3px solid #ee6b2f;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+  height: 36px;
+}
+
+.searchTerm:focus{
+  color: #313131;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #ee6b2f;;
+  background: #ee6b2f;;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: contents;
+}
+
+.grid { 
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    align-items: stretch;
+    margin: 50px;
+    }
+  .grid > article {
+    border: 2px solid #ccc;
     background: #F2F2F2;
-    float: left;
-    display: block;
-    position: relative;
-    border-radius: 5px;
-    width: 100%;
-    padding-top: 100%;
+    transition: all 200ms ease-in-out;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+    cursor: pointer;
+    img {
+        display: block;
+        margin: auto;
+    }
+    p {
+        margin-left: 10px;
+    }
+    &:hover {
+        box-shadow: 0px 6px 10px rgba(0,0,0,0.3);
+        transform: translateY(-4px);
+    }
+    ul {
+        padding: 0;
+        margin-left: 10px;
+        li {
+            width: auto;
+            text-decoration: none;
+            display:inline-block;
+            padding: 5px;
+            span {
+                font-family: "Flexo-Medium",arial,sans-serif;
+                border-radius: 3px;
+                line-height: 18px;
+                max-width: 110px;
+                margin: 0 1.5625% 0 0;
+                width: 38.4375%;
+                font-size: 11px;
+                text-align: center;
+                padding: 2px;
+                &.poison {
+                    background-color: #b97fc9;
+                    color: #fff;
+                }
+                &.grass {
+                    background-color: #9bcc50;;
+                }
+                &.fire {
+                    background-color: #fd7d24;;
+                }
+                &.water {
+                    background-color: #4592c4;
+                    color: #fff;
+                }
+                &.flying {
+                    background-color: #4592c4;
+                }
+                &.bug {
+                    background-color: #729f3f;
+                }
+            }
 
-}
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-}
+        }
+    } 
+   
+  }
+  .grid > article img {
+    max-width: 100%;
+  }
+  .text {
+    padding: 0 20px 20px;
+  }
+  .text > button {
+    background: gray;
+    border: 0;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    }
