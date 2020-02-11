@@ -1,6 +1,8 @@
 # Pokedexapp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.1.
+## Video Demo
+https://drive.google.com/file/d/1B9j5CawpoTBYyrvfbaDlqgJpPUSMOwA3/view?usp=sharing
 
 ## Development server
 
