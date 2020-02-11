@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { SearchPipe } from './search.pipe';
+import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { SearchPipe } from './search.pipe';
     PokedexComponent,
     HeaderComponent,
     SearchPipe,
+    PokemonDetailsComponent,
   ],
   imports: [
     HttpClientModule,

@@ -29,8 +29,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
         //localStorage.setItem('currentUser', JSON.stringify({ token: token, name: name }));
         this.authName = user.displayName;
         this.isAuthenticated = !!user;
-        console.log(!user);
-        console.log(!!user);
         localStorage.setItem('currentUser', JSON.stringify({ token: user.token, name: user.displayName, email: user.email }));
       });
     }
@@ -39,6 +37,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   onLogout() {
     this.authService.logout();
+    this.authName = '';
   }
 
   ngOnDestroy() {

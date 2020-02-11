@@ -9,8 +9,10 @@
  </div>
 
 <main class="grid">
-    <article *ngFor="let pokemon of pokemonArray |  search:query">
-     <p>{{pokemon.name}} </p>
+    <article *ngFor="let pokemon of pokemonArray |  search:query"
+    [routerLink]="['/pokemon-details', pokemon.name]"
+    >
+     <p>{{pokemon.name}} No. {{pokemon.id}} </p>
      <img src={{pokemon.sprites.front_default}}/>
      <ul>
          <li *ngFor="let types of pokemon.types">

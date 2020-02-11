@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm }   from '@angular/forms';
+import { NgForm, FormGroup, FormBuilder, Validators }   from '@angular/forms';
 import {AuthService, AuthResponseData} from './auth.service'
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -11,10 +11,14 @@ import { Observable } from 'rxjs';
 })
 export class AuthComponent implements OnInit {
   isLoginMode = true;
+  form: FormGroup;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) { 
+    
+  }
 
   ngOnInit(): void {
+    
   }
 
   onSwitchMode() {

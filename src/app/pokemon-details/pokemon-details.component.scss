@@ -1,0 +1,73 @@
+.mui-panel.detail-panel {
+    will-change: transform;
+    max-width: 600px;
+    margin: 58px auto 10px;
+    padding: 0;
+    left: 10px;
+    right: 10px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    top: 350px;
+    height: 500px;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: #F2F2F2;
+    border-radius: 2px;
+    padding: 20px;
+    h3{
+        background-color: #30a7d7;
+        color: #fff;
+        padding: 10px;
+    }
+    .detail-panel-content {
+        padding: 15px;
+        .detail-header{
+            display: flex;
+            justify-content: center;
+            ul {
+                padding: 0;
+                margin-left: 10px;
+                li {
+                    width: auto;
+                    text-decoration: none;
+                    display:inline-block;
+                    padding: 5px;
+                    span {
+                        font-family: "Flexo-Medium",arial,sans-serif;
+                        border-radius: 3px;
+                        line-height: 18px;
+                        max-width: 110px;
+                        margin: 0 1.5625% 0 0;
+                        width: 38.4375%;
+                        font-size: 11px;
+                        text-align: center;
+                        padding: 2px;
+                        &.poison {
+                            background-color: #b97fc9;
+                            color: #fff;
+                        }
+                        &.grass {
+                            background-color: #9bcc50;;
+                        }
+                        &.fire {
+                            background-color: #fd7d24;;
+                        }
+                        &.water {
+                            background-color: #4592c4;
+                            color: #fff;
+                        }
+                        &.flying {
+                            background-color: #4592c4;
+                        }
+                        &.bug {
+                            background-color: #729f3f;
+                        }
+                    }
+        
+                }
+            } 
+        }
+    }
+}

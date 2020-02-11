@@ -1,9 +1,9 @@
 <div class="container">
-<h1 class="page-main-title">¡TE DAMOS LA BIENVENIDA AL CLUB DE ENTRENADORES POKÉMON!</h1>
 <div class="auth-container">
+ 
     <div class="form-wrapper">
+      <h2 class="page-main-title">¡TE DAMOS LA BIENVENIDA AL CLUB DE ENTRENADORES POKÉMON!</h2>
         <h2>{{isLoginMode ? 'Iniciar Sesion': 'Registrarse'}}</h2>
-        <h2>{{isLoginMode}}</h2>
         <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
           <input  *ngIf='!isLoginMode' type="text" id="displayName" name="displayName" placeholder="Nombre Completo"
           ngModel
@@ -14,7 +14,7 @@
            required
            email
           >
-          <input type="password" id="password" name="password" placeholder="Your password.."
+          <input type="password" id="password" name="password" placeholder="Passworrd"
           ngModel
           required
           minlength="8"
@@ -25,6 +25,9 @@
             <button class="button button-green" type='button' (click)="onSwitchMode()">{{isLoginMode ? 'Registrarse': 'Cancelar'}}</button>
           </div>
         </form>
+        <div class="about-us-characters">
+          <img src="https://assets.pokemon.com/static2/_ui/img/account/pokemon-login.png" alt="Characters" width="443" height="248">
+      </div>
     </div>
     <!-- <div>
       <h2>¡Únete al Club de Entrenadores Pokémon!</h2>

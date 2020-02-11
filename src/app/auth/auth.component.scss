@@ -1,11 +1,15 @@
 .container {
 
  .auth-container {
+
     display: flex;
     justify-content: space-around;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
     align-items: stretch;
+    h2 {
+      color:  #999999
+    }
     .form-wrapper{
         flex-basis: 50%;
         form {
@@ -54,12 +58,21 @@
                         box-shadow: 0px 6px 10px rgba(0,0,0,0.3);
                         transform: translateY(-4px);
                     }
+                    &:disabled, button[disabled] {
+                        opacity: 0.6;
+                    }
                 }
                
             }
            
         }
-
+    .about-us-characters{
+    float: left;
+    position: relative;
+    margin-top: -75px;
+    top: 0;
+    right: 80px;
+    }
     }  
     }
 }

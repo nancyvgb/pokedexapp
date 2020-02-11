@@ -1,0 +1,24 @@
+<div class="mui-panel detail-panel">
+    <div class="detail-panel-content">
+        <h3>{{pokemonName}} No. {{pokemonDetail.id}}</h3>
+        <div class="detail-header">
+            <img src={{pokemonDetail.sprites.front_shiny}}/>
+            <ul>
+                <li *ngFor="let types of pokemonDetail.types">
+                   <span [ngClass]='types.type.name' >{{ types.type.name}}</span> 
+                </li>
+            </ul>
+        </div>
+        <div class="detail-body">
+            <h3>Profile</h3>
+            <div>
+                <p>Height: {{pokemonDetail.height}}</p>
+                <p>Weight: {{pokemonDetail.weight}}</p>
+            </div>
+            <h3>Moves</h3>
+            <div *ngFor="let pokemon of pokemonDetail.moves">
+                <div>{{pokemon.move.name}}</div>
+            </div>
+        </div>
+    </div>
+</div>
